@@ -1,5 +1,10 @@
 import requests
 
+RED   = "\033[1;31m" 
+GREEN = "\033[0;32m"
+BLUE  = "\033[1;34m"
+BOLD    = "\033[;1m"
+
 sep = "--------------------\n"
 
 req = requests.get("https://economia.awesomeapi.com.br/last/USD-BRL,EUR-BRL,BTC-BRL")
@@ -15,5 +20,5 @@ for i in json:
 
     low =         json[i]["low"]
 
-    print(sep +"Create Date: "+create_date+"\nCurrrency Converter: "+name+"\n"+"High: "+high+"\n"+"Low: "+low)
+    print(BOLD+sep +BLUE+"Create Date: "+create_date+BOLD+"\nCurrrency Converter: "+name+"\n"+GREEN+"High: "+high+"\n"+RED+"Low: "+low+BOLD)
 
